@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as eventsList from '../../utilities/eventsList-service'
 
 export default function CentralPage({user}){
@@ -11,14 +11,22 @@ export default function CentralPage({user}){
         }
         loadEvents()
     }, [])
-    let loadData = events.map(x => {
-        <li>{x}</li>
+    let loadData = events.map((x,idx) => {
+        return <li key={idx}>{x.name}</li>
     })
     return(
-    <div>
-        <ul>
-            {loadData.length <= 0 ? loadData: 'No Events' }
-        </ul>
+    <div className=''>
+        
+            {
+            loadData.length <= 0 ? 
+            <ul>
+                <li>No Events</li> 
+                <Link to='' onClick={()=>console.log('clicky')}>Add New Event</Link>
+            </ul>
+             : 
+             loadData 
+            }
+        
     </div>
     );
 }
