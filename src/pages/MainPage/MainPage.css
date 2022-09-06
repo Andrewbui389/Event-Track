@@ -1,0 +1,12 @@
+.mainpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 90vmin;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}/*# sourceMappingURL=MainPage.css.map */

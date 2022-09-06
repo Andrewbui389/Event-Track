@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../../models/user');
+const EventList = require('../../models/EventList')
 
 module.exports = {
   create,
@@ -29,6 +30,7 @@ async function login(req, res) {
 async function create(req, res) {
   try {
     const user = await User.create(req.body);
+    const eventList = await EventList.create({user:user._id})
     // token is a string
     const token = createJWT(user);
     // Yes, we can serialize (to JSON) strings
