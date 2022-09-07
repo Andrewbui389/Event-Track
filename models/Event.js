@@ -7,14 +7,16 @@ const guestSchema = new Schema({
         required: true
     },
     phoneNumber: {
-        type: String
+        type: String,
+        required: true,
     },
     checkInStatus: {
         type: Boolean,
         default: false
     },
     uniqueCode: {
-        type: Number
+        type: Number,
+        default: 5
     }
 })
 

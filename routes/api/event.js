@@ -1,9 +1,9 @@
 // routes/api/users.js
 const express = require('express');
 const router = express.Router();
-const eventsListCtrl = require('../../controllers/api/eventsList');
+const eventsCtrl = require('../../controllers/api/events');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
-router.get('/', eventsListCtrl.getData);
+router.post('/', eventsCtrl.create);
 
 module.exports = router;

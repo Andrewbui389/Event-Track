@@ -7,7 +7,7 @@ module.exports = {
 
 async function getData(req,res){
     try {
-        let data = await EventList.findOne({user:req.user._id})
+        let data = await EventList.findOne({user:req.user._id}).populate('events').exec()
         res.json(data)
     } catch (error) {
         

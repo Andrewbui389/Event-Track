@@ -12,21 +12,21 @@ export default function CentralPage({user}){
         loadEvents()
     }, [])
     let loadData = events.map((x,idx) => {
-        return <li key={idx}>{x.name}</li>
+        return <li key={idx}>{x.eventTitle}</li>
     })
     return(
     <div className=''>
-        
+        <ul>
             {
             loadData.length <= 0 ? 
-            <ul>
+            
                 <li>No Events</li> 
-                <Link to='newevent'>Add New Event</Link>
-            </ul>
+            
              : 
              loadData 
             }
-        
+            <Link to='newevent'>Add New Event</Link>
+        </ul>
     </div>
     );
 }

@@ -24,6 +24,7 @@ app.use(require('./config/checkToken'));
 const port = process.env.PORT ||  3001;
 
 // Put API routes here, before the "catch all" route
+app.use('/newevent', require('./routes/api/event'))
 app.use('/api/eventslist', require('./routes/api/eventsList'));
 app.use('/api/users', require('./routes/api/users'));
 
