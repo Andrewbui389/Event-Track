@@ -16,7 +16,7 @@ function sendText(name,event,phoneNumber){
         .create({ 
          body: `Hi ${name}, this is you invitation to ${event} event click on the link when you arrive at the door google.com`,  
          messagingServiceSid: messagingServiceSid,      
-         to: '1503-888-4816' 
+         to: '503-888-4816' 
         }) 
         .then(message => console.log(message.sid)) 
         .done();
