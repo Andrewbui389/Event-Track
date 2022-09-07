@@ -12,6 +12,8 @@ export default function NavBar({ user, setUser }) {
     <nav>
       {user ? 
       <>
+      <Link to='/'>Event Track</Link>
+      &nbsp; | &nbsp;
       Welcome, {user.name}
       &nbsp; | &nbsp;
       <Link to='' onClick={handleLogOut}>Log Out</Link>

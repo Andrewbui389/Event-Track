@@ -21,7 +21,7 @@ export default function CentralPage({user}){
             loadData.length <= 0 ? 
             <ul>
                 <li>No Events</li> 
-                <Link to='' onClick={()=>console.log('clicky')}>Add New Event</Link>
+                <Link to='newevent'>Add New Event</Link>
             </ul>
              : 
              loadData 
