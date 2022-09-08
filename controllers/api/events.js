@@ -9,8 +9,8 @@ const client = require('twilio')(accountSid, authToken);
 
 module.exports = {
     create,
-    deleteEvent
-
+    deleteEvent,
+    getEventData
 }
 
 function sendText(name,event,phoneNumber){
@@ -25,14 +25,15 @@ function sendText(name,event,phoneNumber){
 }
 
 async function deleteEvent(req,res){
-    let removeRefUser = await EventList.updateOne({user:req.user._id},
+    await EventList.updateOne({user:req.user._id},
         {$pullAll:{
             events: [{_id:req.params.id}]
         }
 
         })
     await Event.findByIdAndRemove(req.params.id)
-    res.json({})
+    let data = await EventList.findOne({user:req.user._id}).populate('events').exec()
+    res.json(data)
 }
 
 async function create(req,res){
@@ -59,3 +60,11 @@ async function create(req,res){
     }
     
 }
+
+async function getEventData(req,res){
+    let data = await Event.findById(req.params.id)
+    res.json(data)
+}
+
+
+

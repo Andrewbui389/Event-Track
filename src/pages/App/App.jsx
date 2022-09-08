@@ -6,6 +6,7 @@ import NavBar from '../../components/Navbar/NavBar';
 import MainPage from '../MainPage/MainPage';
 import NewEventPage from '../NewEventPage/NewEventPage';
 import GuestInvitePage from '../GuestInvitePage/GuestInvitePage';
+import EventDetailsPage from '../EventDetailsPage/EventDetailsPage';
 import './App.css';
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
             {/* Route components in here */}
             <Route path='/' element={<MainPage />} />
             <Route path='/newevent' element={<NewEventPage />} />
+            <Route path='/event/details/:eventId' element={<EventDetailsPage />} />
           </Routes>
         </>
         :

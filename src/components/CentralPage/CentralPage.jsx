@@ -13,8 +13,8 @@ export default function CentralPage({user}){
     }
 
     async function deleteEvent(eventId){
-        await sendRequest(`/event/${eventId}`, 'DELETE')
-        loadEvents()
+        let res = await sendRequest(`/event/${eventId}`, 'DELETE')
+        setEvents(res.events)
     }
 
     useEffect(function() {
@@ -25,7 +25,7 @@ export default function CentralPage({user}){
         return (
         
         <li key={idx}>
-        {x.eventTitle}
+        <Link to={`/event/details/${x._id}`}>{x.eventTitle}</Link>
         <button onClick={() => deleteEvent(x._id)}>Delete</button>
         </li>
         

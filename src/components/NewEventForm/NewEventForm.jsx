@@ -20,20 +20,14 @@ export default function NewEventForm(){
     }
 
     let handleButton = () => { 
-        
+
         setTimeout(() => {
             setButton(true)
         },500)
 
         setTimeout(() => {
-            setButton(false)
-            let resetForm = {
-                eventTitle: '',
-                guestList: []
-            }
-            document.getElementById('userFile').value = "";
-            setData(resetForm)
-        },2000)
+            navigate('/')
+        },1000)
     }
 
     function handleNameChange(evt){
