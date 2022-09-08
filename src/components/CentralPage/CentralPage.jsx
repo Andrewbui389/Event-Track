@@ -4,21 +4,23 @@ import sendRequest from "../../utilities/send-request";
 import * as eventsList from '../../utilities/eventsList-service'
 
 export default function CentralPage({user}){
+
     let [events, setEvents] = useState([])
+
     async function loadEvents(){
         let data = await eventsList.grabList()
         setEvents(data.events)
     }
 
     async function deleteEvent(eventId){
-        let res = await sendRequest(`/event/${eventId}`, 'DELETE')
+        await sendRequest(`/event/${eventId}`, 'DELETE')
         loadEvents()
     }
 
     useEffect(function() {
         loadEvents()
     }, [])
-    
+
     let loadData = events.map((x,idx) => {
         return (
         

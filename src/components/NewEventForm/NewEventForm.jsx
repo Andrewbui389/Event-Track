@@ -11,10 +11,25 @@ export default function NewEventForm(){
         eventTitle: '',
         guestList: []
     })
+    let [buttonState , setButton] = useState(false)
     async function handleSubmit(evt){
         evt.preventDefault()
-        let res = await sendRequest('/event', 'POST', dataToSend)
+        await sendRequest('/event', 'POST', dataToSend) 
+        document.getElementById('userFile').value = "";
+        setData({
+            eventTitle: '',
+            guestList: []
+        })   
+    }
+
+    let handleButton = () => {
         
+        setTimeout(() => {
+            setButton(true)
+        },500)
+        setTimeout(() => {
+            setButton(false)
+        },2000)
     }
 
     function handleNameChange(evt){
@@ -41,17 +56,14 @@ export default function NewEventForm(){
         };
         reader.readAsBinaryString(file);
       };
-      console.log(dataToSend)
-    
     return(
         <div className="form-con">
             <form autoComplete="off" onSubmit={handleSubmit}>
                 <label>Event Name</label>
-                <input type='text' name='eventTitle' placeholder="Event Name" onChange={handleNameChange}></input>
-                <input type='file' name='guestList' onChange={onChange}></input>
-                <button type="submit">Submit</button>
+                <input type='text' name='eventTitle' placeholder="Event Name" onChange={handleNameChange} value={dataToSend.eventTitle} required></input>
+                <input id='userFile' type='file' name='guestList' onChange={onChange}></input>
+                <button type="submit" className="sub" disabled={buttonState} onClick={handleButton}>Submit</button>
             </form>
         </div>
-       
     );
 }
