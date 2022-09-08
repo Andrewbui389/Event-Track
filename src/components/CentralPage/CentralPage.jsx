@@ -19,7 +19,7 @@ export default function CentralPage({user}){
 
     useEffect(function() {
         loadEvents()
-    }, [])
+    },[])
 
     let loadData = events.map((x,idx) => {
         return (
