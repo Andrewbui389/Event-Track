@@ -1,18 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {read , utils} from 'xlsx'
 import * as XLSX from 'xlsx'
 import sendRequest from "../../utilities/send-request";
 
 
 export default function NewEventForm(){
+    let navigate = useNavigate()
     let [dataToSend, setData] = useState({
         eventTitle: '',
         guestList: []
     })
     async function handleSubmit(evt){
         evt.preventDefault()
-        let res = await sendRequest('/newevent', 'POST', dataToSend) 
-        return 
+        let res = await sendRequest('/event', 'POST', dataToSend)
+        
     }
 
     function handleNameChange(evt){
@@ -20,6 +22,7 @@ export default function NewEventForm(){
         let newData = {...dataToSend, [evt.target.name]:evt.target.value}
         setData(newData)
     }
+    
     const onChange = (e) => {
         const [file] = e.target.files;
         const reader = new FileReader();

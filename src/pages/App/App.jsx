@@ -10,11 +10,7 @@ import './App.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [guest, setGuest] = useState(false)
-  function handleGuest(value){
-    setGuest(value)
-    console.log(guest)
-  }
+  const [guest, setGuest] = useState(true)
   return (
     <main className="App">
       { user ?
@@ -27,21 +23,12 @@ export default function App() {
           </Routes>
         </>
         :
-        <>
-        {
-          guest 
-          ? 
-          <Routes>
-            <Route path='/guestpass/:id' element={<GuestInvitePage runCode={setGuest(true)} />}/>
-          </Routes>
-          :
           <AuthPage setUser={setUser} />
-        }
-        </>
-        
-    
-        
       }
+      <Routes>
+            <Route path='/guestpass/:id' element={<GuestInvitePage />}/>
+      </Routes>
+  
     </main>
   );
 }

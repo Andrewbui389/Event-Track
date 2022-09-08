@@ -8,7 +8,9 @@ const client = require('twilio')(accountSid, authToken);
  
 
 module.exports = {
-    create
+    create,
+    deleteEvent
+
 }
 
 function sendText(name,event,phoneNumber){
@@ -22,23 +24,36 @@ function sendText(name,event,phoneNumber){
         .done();
 }
 
-async function create(req,res){
-    let guestList = req.body.guestList
-    let eventTitle = req.body.eventTitle
-    let userEventList = await EventList.findOne({user:req.user._id})
-    let data = {owner:req.user.name, eventTitle:eventTitle}
-    let newEvent = await Event.create(data)
-    guestList.forEach(guest => {
-        newEvent.guestList.push(guest)
-    })
-    userEventList.events.push(newEvent._id)
-    newEvent.save()
-    userEventList.save()
-    // userEventList.events.push(newEvent)
-    try {
-        guestList.forEach(guest => {
-            sendText(guest.name,eventTitle)
+async function deleteEvent(req,res){
+    let removeRefUser = await EventList.updateOne({user:req.user._id},
+        {$pullAll:{
+            events: [{_id:req.params.id}]
+        }
+
         })
+    await Event.findByIdAndRemove(req.params.id)
+    res.json({})
+}
+
+async function create(req,res){
+    
+    try {
+        const [guestList,eventTitle]  = [req.body.guestList,req.body.eventTitle]
+        const userEventList = await EventList.findOne({user:req.user._id})
+        const data = {owner:req.user.name, eventTitle:eventTitle}
+        const newEvent = await Event.create(data)
+        guestList.forEach(guest => {
+            newEvent.guestList.push(guest)
+        })
+        userEventList.events.push(newEvent._id)
+        newEvent.save()
+        userEventList.save()
+        if(guestList.length >= 1){
+            guestList.forEach(guest => {
+                sendText(guest.name,eventTitle)
+            })
+        }
+        
     } catch (error) {
         
     }
