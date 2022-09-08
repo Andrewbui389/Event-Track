@@ -15,20 +15,24 @@ export default function NewEventForm(){
     async function handleSubmit(evt){
         evt.preventDefault()
         await sendRequest('/event', 'POST', dataToSend) 
-        document.getElementById('userFile').value = "";
-        setData({
-            eventTitle: '',
-            guestList: []
-        })   
+        
+          
     }
 
-    let handleButton = () => {
+    let handleButton = () => { 
         
         setTimeout(() => {
             setButton(true)
         },500)
+
         setTimeout(() => {
             setButton(false)
+            let resetForm = {
+                eventTitle: '',
+                guestList: []
+            }
+            document.getElementById('userFile').value = "";
+            setData(resetForm)
         },2000)
     }
 
