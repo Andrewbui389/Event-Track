@@ -37,7 +37,6 @@ async function deleteEvent(req,res){
 }
 
 async function create(req,res){
-    
     try {
         const [guestList,eventTitle]  = [req.body.guestList,req.body.eventTitle]
         const userEventList = await EventList.findOne({user:req.user._id})
