@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 export default function EventDetailsPage(){
     let { eventId } = useParams()
     return(
-        <main>
+        <div>
           <GuestsComponent eventId={eventId}/>
-        </main>
+        </div>
     );
 }

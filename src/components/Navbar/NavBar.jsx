@@ -16,12 +16,12 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       Welcome, {user.name}
       &nbsp; | &nbsp;
-      <Link to='' onClick={handleLogOut}>Log Out</Link>
+      <Link to='#' onClick={handleLogOut}>Log Out</Link>
       </>
       :
       <>
-      <Link to=''>Log Out</Link>
-      <Link to=''>Log Out</Link>
+      <Link to='#'>Log Out</Link>
+      <Link to='#'>Log Out</Link>
       </>
       }
 
