@@ -1,7 +1,7 @@
 import QRCode from "react-qr-code";
 
-export default function GuestQRCode({guestId}){
+export default function GuestQRCode({url}){
     return(
-    <QRCode value={guestId} />
+    <QRCode value={url} />
     );
 }

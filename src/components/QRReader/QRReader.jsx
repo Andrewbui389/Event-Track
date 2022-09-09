@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import QrReader from 'react-qr-scanner'
+import sendRequest from '../../utilities/send-request'
 
 export default class Test extends Component {
   constructor(props){
@@ -11,8 +12,11 @@ export default class Test extends Component {
 
     this.handleScan = this.handleScan.bind(this)
   }
-  handleScan(data){
-    console.log(data)
+  async handleScan(data){
+    if(data !== null){console.log(data)}
+    
+
+    //let res = await sendRequest(`${data.text}`, 'GET')
   }
   handleError(err){
     console.error(err)

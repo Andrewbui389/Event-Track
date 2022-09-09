@@ -3,7 +3,8 @@ const User = require('../../models/user')
 const Event = require('../../models/Event')
 
 module.exports = {
-    guestUpdate
+    guestUpdate,
+    qrCheck
 }
 
 async function guestUpdate(req,res){
@@ -19,4 +20,8 @@ async function guestUpdate(req,res){
         res.json(data)
     } catch (error) {  
     }
+}
+
+async function qrCheck(req, res){
+    console.log(req.params.guestId, req.params.guestId)
 }
