@@ -19,7 +19,7 @@ export default function App() {
     <main className="App">
 
     <Routes>
-      <Route path='/guestpass/:id' element={<GuestInvitePage changPageStat={changPageStat} />}/>
+      <Route path='/guestpass/:eventId/:guestId' element={<GuestInvitePage changPageStat={changPageStat} />}/>
     </Routes>
       
     {
