@@ -11,9 +11,19 @@ import './App.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [indivudalPage, setindivudalPage] = useState(false)
+  function changPageStat(value){
+    setindivudalPage(value)
+  }
   return (
     <main className="App">
-      { user ?
+
+    <Routes>
+      <Route path='/guestpass/:id' element={<GuestInvitePage changPageStat={changPageStat} />}/>
+    </Routes>
+      
+    {
+    user && !indivudalPage ?
         <>
         <NavBar user={user} setUser={setUser} />
           <Routes>
@@ -24,12 +34,8 @@ export default function App() {
           </Routes>
         </>
         :
-          <AuthPage setUser={setUser} />
-      }
-      <Routes>
-            <Route path='/guestpass/:id' element={<GuestInvitePage />}/>
-      </Routes>
-  
+        indivudalPage ?  '' : <AuthPage setUser={setUser} />
+    }
     </main>
   );
 }
