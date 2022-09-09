@@ -16,7 +16,7 @@ async function guestUpdate(req,res){
             guests['checkInStatus'] = true
         }
         await data.save()
-        res.json({})
+        res.json(data)
     } catch (error) {  
     }
 }

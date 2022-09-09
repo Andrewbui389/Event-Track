@@ -18,6 +18,8 @@ export default function GuestsComponent({eventId}){
 
     async function switchStatus(guestId){
        let res = await sendRequest(`/updateguest/${eventId}/${guestId}`, 'PUT')
+       guests.current = res.guestList
+       setEvent(res)
     }
     
     useEffect(() => {
