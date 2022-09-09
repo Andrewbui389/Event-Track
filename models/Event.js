@@ -34,5 +34,10 @@ const eventSchema = new Schema({
 
 })
 
+guestSchema.methods.checkIn = function(){
+    this.checkInStatus = true
+    this.save()
+}
+
 
 module.exports = mongoose.model('Event', eventSchema);
