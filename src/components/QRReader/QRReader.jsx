@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import QrReader from 'react-qr-scanner'
 import sendRequest from '../../utilities/send-request'
+import { useNavigate } from 'react-router-dom'
 
 export default class Test extends Component {
   constructor(props){
@@ -14,6 +15,8 @@ export default class Test extends Component {
   }
   async handleScan(data){
     if(data !== null){console.log(data)}
+
+
     
 
     //let res = await sendRequest(`${data.text}`, 'GET')
@@ -26,9 +29,8 @@ export default class Test extends Component {
       height: 240,
       width: 320,
     }
-
     return(
-      <div>
+        <div>
         <QrReader
           delay={this.state.delay}
           style={previewStyle}
@@ -36,7 +38,7 @@ export default class Test extends Component {
           onScan={this.handleScan}
           />
         <p>{this.state.result}</p>
-      </div>
+        </div>
     )
   }
 }
