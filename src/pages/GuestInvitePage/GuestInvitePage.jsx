@@ -11,10 +11,7 @@ export default function GuestInvitePage({changPageStat}){
     const { eventId , guestId } = useParams()
     return(
     <div>
-    <h1>jioefnesnfeksjnfesjkf</h1>
-        <Test />
-        <GuestQRCode url={`/updateguest/checkin/${eventId}/${guestId}`}/>
-        
+        <GuestQRCode url={`/${eventId}/${guestId}`}/>
     </div>
     );
 }

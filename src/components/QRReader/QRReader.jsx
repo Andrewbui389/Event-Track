@@ -14,12 +14,11 @@ export default class Test extends Component {
     this.handleScan = this.handleScan.bind(this)
   }
   async handleScan(data){
-    if(data !== null){console.log(data)}
-
-
-    
-
-    //let res = await sendRequest(`${data.text}`, 'GET')
+        // await sendRequest(`${data.text}`, 'GET') 
+        if(data){
+            this.props.test(data.text)
+        }
+        
   }
   handleError(err){
     console.error(err)
