@@ -13,10 +13,10 @@ module.exports = {
     getEventData
 }
 
-function sendText(name,event,phoneNumber){
+function sendText(name,event,eventId,guestId){
     client.messages 
         .create({ 
-         body: `Hi ${name}, this is you invitation to ${event} event click on the link when you arrive at the door google.com`,  
+         body: `Hi ${name}, this is you invitation to ${event} event click on the link when you arrive at the door https://event-track.herokuapp.com/guestpass/${eventId}/${guestId}`,  
          messagingServiceSid: messagingServiceSid,      
          to: '503-888-4816' 
         }) 
@@ -45,14 +45,14 @@ async function create(req,res){
         guestList.forEach(guest => {
             newEvent.guestList.push(guest)
         })
+        newEvent.guestList.forEach(guest => {
+            sendText(guest.name, eventTitle, newEvent._id, guest._id)
+            console.log('work')
+        })
+        console.log(newEvent)
         userEventList.events.push(newEvent._id)
         newEvent.save()
-        userEventList.save()
-        if(guestList.length >= 1){
-            guestList.forEach(guest => {
-                sendText(guest.name,eventTitle)
-            })
-        }
+        userEventList.save()        
         
     } catch (error) {
         

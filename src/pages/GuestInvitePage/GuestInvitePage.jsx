@@ -1,5 +1,6 @@
 import GuestQRCode from "../../components/GuestQRCode/GuestQRCode";
 import Test from "../../components/QRReader/QRReader";
+import './GuestInvitePage.css'
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -10,8 +11,8 @@ export default function GuestInvitePage({changPageStat}){
     
     const { eventId , guestId } = useParams()
     return(
-    <div>
-        <GuestQRCode url={`/${eventId}/${guestId}`}/>
+    <div className="qrCode">
+        <GuestQRCode url={`/updateguest/checkin/${eventId}/${guestId}`}/>
     </div>
     );
 }
