@@ -25,7 +25,7 @@ export default class QRReader extends Component {
       width: 320,
     }
     return(
-        <div>
+      <>
         <QrReader
           delay={this.state.delay}
           style={previewStyle}
@@ -33,7 +33,7 @@ export default class QRReader extends Component {
           onScan={this.handleScan}
           />
         <button onClick={() => this.props.handleqr(false)}>Cancel</button>
-        </div>
+      </>
     )
   }
 }

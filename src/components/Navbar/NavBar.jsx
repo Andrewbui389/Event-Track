@@ -12,12 +12,15 @@ export default function NavBar({ user, setUser }) {
     <nav>
       {user ? 
       <>
-      <Link to='/'>Event Track</Link>
-      &nbsp; | &nbsp;
-      Welcome, {user.name}
-      &nbsp; | &nbsp;
-      <Link to='#' onClick={handleLogOut}>Log Out</Link>
+      <div className='nav-item'>
+        <Link to='/'>Event Track</Link>
+      </div>
+      <div className='nav-item'>
+        <h6> Welcome, {user.name} </h6>
+        <Link to='#' onClick={handleLogOut}>Log Out</Link>
+      </div>
       </>
+      
       :
       <>
       <Link to='#'>Log Out</Link>

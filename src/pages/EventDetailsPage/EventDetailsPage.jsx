@@ -56,7 +56,7 @@ export default function EventDetailsPage({setLeftSideItems}){
             ''
             }
             {showPageUpdateForm && showCheckIn === false? 
-            <EventUpdate handleUpdateForm={handleUpdateForm}/> 
+            <EventUpdate handleUpdateForm={handleUpdateForm} eventId={eventId}/> 
             :
             ''
             }

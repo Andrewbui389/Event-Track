@@ -12,6 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+  text-decoration: none;
+  color: antiquewhite;
+}
 /* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
@@ -45,18 +50,17 @@ code {
 }
 
 nav {
-  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 99vw;
+  height: 10vh;
   color: white;
 }
 
 nav > a {
   text-decoration: none;
   color: white;
-}
-
-nav > a:hover {
-  text-decoration: none;
-  color: green;
 }
 
 li > button{
@@ -69,9 +73,33 @@ li > button:hover{
   transition: 500ms;
 }
 
+nav  > .nav-item > * {
+  margin: 0;
+}
+
+nav  > .nav-item > h6 {
+  margin-right: 10px;
+}
+
+.displayItems, nav  > .nav-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.displayItems > p, .displayItems > h5 {
+  width: 30vmin;
+  margin: 0;
+  padding: 0;
+}
+
 .rightSide{
-  height: 100vh;
-  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 80vw;
 }
 
 .leftsidenav{
@@ -203,4 +231,10 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+@media screen and (max-width: 951px) {
+  .auth-page {
+    flex-direction: column;
+  }
 }

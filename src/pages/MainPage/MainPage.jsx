@@ -7,7 +7,7 @@ export default function MainPage({user, setLeftSideItems}){
     useEffect(() => {
         setLeftSideItems(links)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [links])
+    }, [])
     return (
         <main className="rightSide">
            <CentralPage user={user}/> 

@@ -1,6 +1,7 @@
 .auth-page {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding: 10vmin;
     height: 100vh;
 }
@@ -10,3 +11,28 @@
     flex-direction: column-reverse;
     justify-content:center;
 }
+
+.boxValue{
+    animation: fadeInUp 1s;
+}
+
+#homepage {
+    overflow: hidden;
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 951px) {
+    svg {
+        display: none;
+    }
+  }

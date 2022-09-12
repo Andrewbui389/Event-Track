@@ -10,7 +10,8 @@ const client = require('twilio')(accountSid, authToken);
 module.exports = {
     create,
     deleteEvent,
-    getEventData
+    getEventData,
+    updateTitle
 }
 
 function sendText(name,event,eventId,guestId){
@@ -61,6 +62,13 @@ async function create(req,res){
 async function getEventData(req,res){
     let data = await Event.findById(req.params.id)
     res.json(data)
+}
+
+async function updateTitle(req,res){
+    let data = await Event.findById(req.params.id)
+    data.eventTitle = req.body.eventTitle
+    data.save()
+    res.json({})
 }
 
 

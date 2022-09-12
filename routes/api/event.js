@@ -8,6 +8,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 router.post('/', eventsCtrl.create);
 router.get('/:id', eventsCtrl.getEventData);
+router.put('/updateevent/:id', eventsCtrl.updateTitle)
 router.delete('/:id', eventsCtrl.deleteEvent);
 
 module.exports = router;
