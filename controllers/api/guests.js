@@ -37,7 +37,6 @@ async function qrCheckIn(req,res){
         } else {
             res.json({message:`${guests.name} has checked in already`})
         }
-        
     } catch (error) {  
         
     }
