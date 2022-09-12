@@ -47,9 +47,7 @@ async function create(req,res){
         })
         newEvent.guestList.forEach(guest => {
             sendText(guest.name, eventTitle, newEvent._id, guest._id)
-            console.log('work')
         })
-        console.log(newEvent)
         userEventList.events.push(newEvent._id)
         newEvent.save()
         userEventList.save()        

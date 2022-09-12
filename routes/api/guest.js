@@ -4,9 +4,8 @@ const router = express.Router();
 const guestCtrl = require('../../controllers/api/guests');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
-
-router.get('/checkin/:eventId/:guestId', guestCtrl.qrCheck)
 router.put('/:eventId/:guestId', guestCtrl.guestUpdate);
+router.put('/qrcode/:eventId/:guestId', guestCtrl.qrCheckIn);
 
 
 module.exports = router;

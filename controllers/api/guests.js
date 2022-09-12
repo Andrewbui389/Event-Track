@@ -4,7 +4,7 @@ const Event = require('../../models/Event')
 
 module.exports = {
     guestUpdate,
-    qrCheck
+    qrCheckIn
 }
 
 async function guestUpdate(req,res){
@@ -16,12 +16,25 @@ async function guestUpdate(req,res){
         }else {
             guests['checkInStatus'] = true
         }
-        await data.save()
+        data.save()
         res.json(data)
     } catch (error) {  
     }
 }
 
-async function qrCheck(req, res){
-    console.log(req.params.guestId, req.params.guestId)
+async function qrCheckIn(req,res){
+    try {
+        let data =  await Event.findOne({_id:req.params.eventId})
+        let guests = data.guestList.id(req.params.guestId)
+        if(!guests['checkInStatus']){
+            guests['checkInStatus'] = true
+            data.save()
+            res.json({message:`Succesfully Checked In ${guests.name}` })
+        } else {
+            res.json({message:`${guests.name} has checked in already`})
+        }
+        
+    } catch (error) {  
+        
+    }
 }

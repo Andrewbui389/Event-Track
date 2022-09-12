@@ -12,5 +12,4 @@ async function getData(req,res){
     } catch (error) {
         
     }
-    
 }

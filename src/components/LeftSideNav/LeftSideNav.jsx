@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-export default function LeftSideNav(){
+export default function LeftSideNav({leftSideItems}){
     return(
-    <div>
-    <ul>
-        <Link to=''>Events</Link>
-    </ul>
-        
+    <div >
+        <ul className="leftsidenav">
+            <Link to='/'>Home</Link>
+            {leftSideItems}
+        </ul>    
     </div>
     );
 }

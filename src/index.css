@@ -59,6 +59,20 @@ nav > a:hover {
   color: green;
 }
 
+li > button{
+  background-color: red;
+}
+
+.rightSide{
+  height: 100vh;
+  width: 100vw;
+}
+
+.leftsidenav{
+  display: flex;
+  flex-direction: column;
+}
+
 #navColor{
   background-color: var(--tan-4);
 }

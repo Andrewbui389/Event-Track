@@ -1,24 +1,18 @@
 import React, { Component } from 'react'
 import QrReader from 'react-qr-scanner'
-import sendRequest from '../../utilities/send-request'
-import { useNavigate } from 'react-router-dom'
-
 export default class Test extends Component {
   constructor(props){
     super(props)
     this.state = {
-      delay: 9000,
-      result: 'No result',
+      delay: 10000,
     }
 
     this.handleScan = this.handleScan.bind(this)
   }
   async handleScan(data){
-        // await sendRequest(`${data.text}`, 'GET') 
         if(data){
             this.props.test(data.text)
-        }
-        
+        }        
   }
   handleError(err){
     console.error(err)
@@ -36,7 +30,7 @@ export default class Test extends Component {
           onError={this.handleError}
           onScan={this.handleScan}
           />
-        <p>{this.state.result}</p>
+        <button onClick={() => this.props.handleqr(false)}>Cancel</button>
         </div>
     )
   }

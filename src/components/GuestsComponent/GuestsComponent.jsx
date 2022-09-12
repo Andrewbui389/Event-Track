@@ -20,6 +20,7 @@ export default function GuestsComponent({eventId}){
        let res = await sendRequest(`/updateguest/${eventId}/${guestId}`, 'PUT')
        guests.current = res.guestList
        setEvent(res)
+       return
     }
     
     useEffect(() => {
@@ -27,6 +28,7 @@ export default function GuestsComponent({eventId}){
             let res = await sendRequest(`/event/${eventId}`)
             guests.current = res.guestList
             setEvent(res)
+            return
         }
         retrieveEvent()
     },[eventId])

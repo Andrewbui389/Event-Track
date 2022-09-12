@@ -7,16 +7,18 @@ import sendRequest from "../../utilities/send-request";
 
 export default function NewEventForm(){
     let navigate = useNavigate()
+
     let [dataToSend, setData] = useState({
         eventTitle: '',
         guestList: []
     })
+
     let [buttonState , setButton] = useState(false)
+
     async function handleSubmit(evt){
         evt.preventDefault()
         await sendRequest('/event', 'POST', dataToSend) 
-        
-          
+        return
     }
 
     let handleButton = () => { 

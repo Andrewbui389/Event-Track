@@ -32,17 +32,14 @@ export default function CentralPage({user}){
         )
     })
     return(
-    <div className=''>
         <ul>
             {
             loadData.length <= 0 
             ? 
             <li>No Events</li> 
             : 
-             loadData 
+            loadData 
             }
-            <Link to='newevent'>Add New Event</Link>
         </ul>
-    </div>
     );
 }
