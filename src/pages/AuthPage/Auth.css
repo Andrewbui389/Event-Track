@@ -17,10 +17,6 @@
           animation: fadeInUp 1s;
 }
 
-#homepage {
-  overflow: hidden;
-}
-
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
@@ -43,7 +39,7 @@
   }
 }
 @media screen and (max-width: 951px) {
-  svg {
+  #homepage {
     display: none;
   }
 }/*# sourceMappingURL=Auth.css.map */
