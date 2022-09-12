@@ -25,7 +25,6 @@ export default function EventDetailsPage({setLeftSideItems}){
             let res = await sendRequest(`/updateguest/qrcode/${data[3]}/${data[4]}`, 'PUT')    
             setUserMessage(res.message)
         } catch{
-            setUserMessage('This guest has Checked In Already')
         }
         
     }

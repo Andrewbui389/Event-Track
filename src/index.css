@@ -60,7 +60,13 @@ nav > a:hover {
 }
 
 li > button{
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0 5px;
+}
+
+li > button:hover{
+  background-color: rgba(173, 45, 45, 0.537);
+  transition: 500ms;
 }
 
 .rightSide{
