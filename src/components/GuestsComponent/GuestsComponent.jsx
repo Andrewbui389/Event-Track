@@ -8,11 +8,11 @@ export default function GuestsComponent({eventId}){
 
     let guestsArr = guests.current.map((guest,idx) => {
         return(
-            <li key={idx}>
-                <h5>{guest.name}</h5>
-                <p>Status: {guest.checkInStatus ? 'Checked In' : 'Have not checked in'}</p>
-                <button onClick={() => switchStatus(guest._id)}> {guest.checkInStatus ? 'Check Guest Out' : 'Check Guest In'}</button>
-            </li>
+        <li key={idx}>
+            <h5>{guest.name}</h5>
+            <p>Status: {guest.checkInStatus ? 'Checked In' : 'Have not checked in'}</p>
+            <button onClick={() => switchStatus(guest._id)}> {guest.checkInStatus ? 'Check Guest Out' : 'Check Guest In'}</button>
+        </li>
         )
     })
 
