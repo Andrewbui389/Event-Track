@@ -5,14 +5,17 @@ export default class Test extends Component {
     super(props)
     this.state = {
       delay: 10000,
+      run: true
     }
 
     this.handleScan = this.handleScan.bind(this)
   }
   async handleScan(data){
-        if(data){
+        if(data && this.state.run){
             this.props.test(data.text)
+            this.state = {run:false}
         }        
+        console.log(this.state)
   }
   handleError(err){
     console.error(err)
