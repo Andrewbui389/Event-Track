@@ -12,10 +12,9 @@ export default class Test extends Component {
   }
   async handleScan(data){
         if(data && this.state.run){
-            this.props.test(data.text)
             this.state = {run:false}
-        }        
-        console.log(this.state)
+            await this.props.test(data.text)
+        }
   }
   handleError(err){
     console.error(err)

@@ -21,9 +21,14 @@ export default function EventDetailsPage({setLeftSideItems}){
     async function test(value){
         try {
             let data = value.split('/')
-            let res = await sendRequest(`/updateguest/qrcode/${data[3]}/${data[4]}`, 'PUT')  
+            let res = await sendRequest(`/updateguest/qrcode/${data[3]}/${data[4]}`, 'PUT').then(res => {
             setCheckIn(false)
+            return res
+            })
             setUserMessage(res.message)
+            return
+            
+           
         } catch{
         }
         
