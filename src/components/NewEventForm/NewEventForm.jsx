@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {read , utils} from 'xlsx'
 import * as XLSX from 'xlsx'
 import sendRequest from "../../utilities/send-request";
 

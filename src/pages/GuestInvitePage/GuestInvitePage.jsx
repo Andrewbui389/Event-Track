@@ -1,8 +1,8 @@
-import GuestQRCode from "../../components/GuestQRCode/GuestQRCode";
-import Test from "../../components/QRReader/QRReader";
-import './GuestInvitePage.css'
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import GuestQRCode from "../../components/GuestQRCode/GuestQRCode";
+import './GuestInvitePage.css'
+
 
 export default function GuestInvitePage({changPageStat}){
     useEffect(() => {

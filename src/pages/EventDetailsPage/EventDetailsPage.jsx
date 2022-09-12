@@ -1,7 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GuestsComponent from "../../components/GuestsComponent/GuestsComponent";
-import Test from "../../components/QRReader/QRReader";
+import QRReader from "../../components/QRReader/QRReader";
 import sendRequest from "../../utilities/send-request";
 import EventUpdate from "../../components/EventUpdate/EventUpdate";
 export default function EventDetailsPage({setLeftSideItems}){
@@ -43,7 +43,7 @@ export default function EventDetailsPage({setLeftSideItems}){
     return(
         <div className="rightSide">
             {showCheckIn ? 
-            <Test test={test} handleqr={handleqr}/> 
+            <QRReader test={test} handleqr={handleqr}/> 
             : 
             ''
             }
