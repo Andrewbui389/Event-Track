@@ -26,7 +26,11 @@ async function qrCheckIn(req,res){
     try {
         let data =  await Event.findOne({_id:req.params.eventId})
         let guests = data.guestList.id(req.params.guestId)
-        if(!guests['checkInStatus']){
+        console.log(data,guests)
+        if(!guests){
+            res.json({message:`Guest is not on the list` })
+        }
+        else if(!guests['checkInStatus']){
             guests['checkInStatus'] = true
             data.save()
             res.json({message:`Succesfully Checked In ${guests.name}` })
