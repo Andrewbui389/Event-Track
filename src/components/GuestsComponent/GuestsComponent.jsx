@@ -52,10 +52,10 @@ export default function GuestsComponent({eventId}){
     return(
     
     <div>
-    <h1>Event Name: {event.eventTitle}</h1>
-    <ul>
-    {guestsArr}
-    </ul>
+        <h1>Event Name: {event.eventTitle}</h1>
+        <ul>
+            {guestsArr}
+        </ul>
     </div>
     )
 }

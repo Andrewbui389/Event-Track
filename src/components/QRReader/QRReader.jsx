@@ -32,6 +32,7 @@ export default class QRReader extends Component {
           onError={this.handleError}
           onScan={this.handleScan}
           />
+        <h2> Ready For Scan </h2>
         <button onClick={() => this.props.setCurrentPage(1)}>Cancel</button>
       </>
     )

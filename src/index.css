@@ -166,6 +166,53 @@ nav  > .nav-item > h6 {
   border-radius: 1vmin;
 }
 
+.form-con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formItems{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.form-label{
+  height: 10vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 15px
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.eventTableCell{
+  height: 8vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.leftSideNav{
+  display: flex;
+  justify-content: center;
+  width: 15vw;
+}
+
+ul > button {
+  width: 10vw;
+}
+
+
 p.error-message {
   color: var(--orange);
   text-align: center;

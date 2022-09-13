@@ -56,13 +56,19 @@ export default function NewEventForm(){
         reader.readAsBinaryString(file);
       };
     return(
-        <div className="form-con">
-            <form autoComplete="off" onSubmit={handleSubmit}>
-                <label>Event Name</label>
-                <input type='text' name='eventTitle' placeholder="Event Name" onChange={handleNameChange} value={dataToSend.eventTitle} required></input>
-                <input id='userFile' type='file' name='guestList' onChange={onChange}></input>
-                <button type="submit" className="sub" disabled={buttonState} onClick={handleButton}>Submit</button>
-            </form>
-        </div>
+        <form autoComplete="off" onSubmit={handleSubmit} className="form-con">
+            <div className="formItems">
+                <div className="form-label">
+                    <label name='eventTitle'>Event Name</label>
+                    <label name='guestList'>Event Guest Template</label>
+                </div>
+                <div className="form-group">
+                    <input type='text' name='eventTitle' placeholder="Event Name" onChange={handleNameChange} value={dataToSend.eventTitle} required></input>
+                    <input id='userFile' type='file' name='guestList' onChange={onChange}></input>
+                </div>
+            </div>
+            
+            <button type="submit" className="sub" disabled={buttonState} onClick={handleButton}>Submit</button>
+        </form>
     );
 }
