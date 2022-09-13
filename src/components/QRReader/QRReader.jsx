@@ -13,7 +13,7 @@ export default class QRReader extends Component {
   async handleScan(data){
         if(data && this.state.run){
             this.state = {run:false}
-            await this.props.test(data.text)
+            await this.props.checkIn(data.text)
         }
   }
   handleError(err){
@@ -32,7 +32,7 @@ export default class QRReader extends Component {
           onError={this.handleError}
           onScan={this.handleScan}
           />
-        <button onClick={() => this.props.handleqr(false)}>Cancel</button>
+        <button onClick={() => this.props.setCurrentPage(1)}>Cancel</button>
       </>
     )
   }

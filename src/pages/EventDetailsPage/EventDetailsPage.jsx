@@ -5,24 +5,14 @@ import QRReader from "../../components/QRReader/QRReader";
 import sendRequest from "../../utilities/send-request";
 import EventUpdate from "../../components/EventUpdate/EventUpdate";
 export default function EventDetailsPage({setLeftSideItems}){
-    const [showCheckIn, setCheckIn] = useState(false)
-    const [showPageUpdateForm , setShowPageUpdateForm] = useState(false)
+    const [currentPage, setCurrentPage] = useState(1)
     const [userMessage, setUserMessage ] = useState(null)
 
-    function handleUpdateForm(value){
-        setShowPageUpdateForm(value)
-    }
-
-    
-    function handleqr(value){
-        setCheckIn(value)
-    }
-
-    async function test(value){
+    async function checkIn(value){
         try {
             let data = value.split('/')
             let res = await sendRequest(`/updateguest/qrcode/${eventId}/${data[4]}`, 'PUT').then(res => {
-            setCheckIn(false)
+            currentPage(1)
             return res
             })
             setUserMessage(res.message)
@@ -37,30 +27,22 @@ export default function EventDetailsPage({setLeftSideItems}){
     let { eventId } = useParams()
 
     useEffect(() => {
-        setLeftSideItems([<button onClick={() => handleqr(true)}>Check in a guest</button>, <button onClick={() => handleUpdateForm(true)}>Update Event Information</button>,<button onClick={() => handleUpdateForm(true)}>Add New Guest</button>])
+        setLeftSideItems([<button onClick={() => setCurrentPage(2)}>Check in a guest</button>, <button onClick={() => setCurrentPage(3)}>Update Event Information</button>,<button >Add New Guest</button>])
     },[setLeftSideItems])
 
     return(
         <div className="rightSide">
-            {showCheckIn ? 
-            <QRReader test={test} handleqr={handleqr}/> 
-            : 
-            ''
-            }
-            {!showCheckIn &&  !showPageUpdateForm 
-            ? 
             <>
-            <GuestsComponent eventId={eventId} />
-            </>
+            {
+            currentPage === 1 ? 
+            <GuestsComponent eventId={eventId} /> 
             :
             ''
             }
-            {showPageUpdateForm && showCheckIn === false? 
-            <EventUpdate handleUpdateForm={handleUpdateForm} eventId={eventId}/> 
-            :
-            ''
-            }
+            {currentPage === 2 ? <QRReader checkIn={checkIn}  setCurrentPage={setCurrentPage} /> : ''}
+            {currentPage === 3 ? <EventUpdate eventId={eventId} setCurrentPage={setCurrentPage} /> : ''}
             {userMessage}
+            </>
         </div>
     );
 }

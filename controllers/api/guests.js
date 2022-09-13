@@ -1,10 +1,9 @@
-const EventList = require('../../models/EventList')
-const User = require('../../models/user')
 const Event = require('../../models/Event')
 
 module.exports = {
     guestUpdate,
-    qrCheckIn
+    qrCheckIn,
+    delete : deleteGuest
 }
 
 async function guestUpdate(req,res){
@@ -26,7 +25,6 @@ async function qrCheckIn(req,res){
     try {
         let data =  await Event.findOne({_id:req.params.eventId})
         let guests = data.guestList.id(req.params.guestId)
-        console.log(data,guests)
         if(!guests){
             res.json({message:`Guest is not on the list` })
         }
@@ -40,4 +38,17 @@ async function qrCheckIn(req,res){
     } catch (error) {  
         
     }
+}
+
+async function deleteGuest(req,res){
+    try {
+        let event = await Event.findById(req.params.eventId)
+        let guest = event.guestList.id(req.params.guestId)
+        guest.remove()
+        event.save()
+        res.json(event)
+    } catch {
+        res.status(400)
+    }
+    
 }

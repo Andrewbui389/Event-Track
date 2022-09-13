@@ -6,6 +6,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 router.put('/:eventId/:guestId', guestCtrl.guestUpdate);
 router.put('/qrcode/:eventId/:guestId', guestCtrl.qrCheckIn);
+router.delete('/remove/:eventId/:guestId', guestCtrl.delete);
 
 
 module.exports = router;

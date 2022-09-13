@@ -1,6 +1,5 @@
 const EventList = require('../../models/EventList')
 const Event = require('../../models/Event')
-const User = require('../../models/user')
 const accountSid =   process.env.TWILIO_ACCOUNT_SID             
 const authToken = process.env.TWILIO_AUTH_TOKEN; 
 const messagingServiceSid = process.env.MESSAGINGSERVICEID
@@ -54,14 +53,23 @@ async function create(req,res){
         userEventList.save()        
         
     } catch (error) {
-        
+        res.status(404).json({err:'Error With Backend'})
     }
     
 }
 
 async function getEventData(req,res){
-    let data = await Event.findById(req.params.id)
-    res.json(data)
+    try {
+        let data = await Event.findById(req.params.id)
+        if(data.owner !== req.user.name){
+            throw new Error('redirect')
+        }else{
+            res.json(data)
+        }
+    } catch (error) {
+        res.json({e:'redirect'})
+    }
+    
 }
 
 async function updateTitle(req,res){

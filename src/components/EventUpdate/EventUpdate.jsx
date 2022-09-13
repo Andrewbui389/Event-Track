@@ -1,7 +1,7 @@
 import { useState } from "react";
 import sendRequest from "../../utilities/send-request";
 
-export default function EventUpdate({handleUpdateForm, eventId}){
+export default function EventUpdate({eventId, setCurrentPage}){
     let [data , setData] = useState({eventTitle:''})
 
     function updateData(evt){
@@ -12,7 +12,7 @@ export default function EventUpdate({handleUpdateForm, eventId}){
     async function handleFormSubmission(evt){
         evt.preventDefault()
         await sendRequest(`/event/updateevent/${eventId}`, 'PUT', data)
-        handleUpdateForm(false)
+        setCurrentPage(1)
         return
     }
 
@@ -23,7 +23,7 @@ export default function EventUpdate({handleUpdateForm, eventId}){
             <input type='text' name='eventTitle' onChange={updateData} value={data.eventName} required></input>
             <div style={{display:'flex'}}>
                 <button type="submit">Submit Update</button>
-                <button onClick={() => handleUpdateForm(false)}>Cancel</button> 
+                <button onClick={() => setCurrentPage(1)}>Cancel</button> 
             </div>
         </form>
     );

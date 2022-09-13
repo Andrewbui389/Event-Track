@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const ensureLoggedIn = require('./config/ensureLoggedIn')
 
 const app = express();
 
@@ -24,9 +25,9 @@ app.use(require('./config/checkToken'));
 const port = process.env.PORT ||  3001;
 
 // Put API routes here, before the "catch all" route
-app.use('/updateguest', require('./routes/api/guest'))
-app.use('/event', require('./routes/api/event'))
-app.use('/api/eventslist', require('./routes/api/eventsList'));
+app.use('/updateguest',ensureLoggedIn, require('./routes/api/guest'))
+app.use('/event', ensureLoggedIn ,require('./routes/api/event'))
+app.use('/api/eventslist',ensureLoggedIn, require('./routes/api/eventsList'));
 app.use('/api/users', require('./routes/api/users'));
 
 
