@@ -8,7 +8,7 @@ This is an event creation and tracker application, which provides the user a sim
 
 ## Built With
 [![JavaScript Icon](https://user-images.githubusercontent.com/25181517/117447535-f00a3a00-af3d-11eb-89bf-45aaf56dbaf1.png)](https://www.javascript.com/)
-[![HTML Icon](https://user-images.githubusercontent.com/25181517/183577242-5081ea3b-7a3c-419b-9b81-014bf32e2e69.png=50x50))]()
+[![HTML Icon](https://user-images.githubusercontent.com/25181517/183577242-5081ea3b-7a3c-419b-9b81-014bf32e2e69.png)| width=100)]()
 [![HTML Icon](https://user-images.githubusercontent.com/25181517/189715289-df3ee512-6eca-463f-a0f4-c10d94a06b2f.png)]()
 [![HTML Icon](https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png)]()
 [![HTML Icon](https://user-images.githubusercontent.com/25181517/182884177-d48a8579-2cd0-447a-b9a6-ffc7cb02560e.png)]()
