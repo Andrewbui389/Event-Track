@@ -11,29 +11,22 @@ I made this game for the first unit project at General Assembly, the game consis
 ## Built With
 [![JavaScript Icon](https://i.imgur.com/8dlunYx.png)](https://www.javascript.com/)
 [![HTML Icon](https://i.imgur.com/a28wdJt.png)](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
-[![CSS Icon](https://i.imgur.com/xxxjbkz.png)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
 
 ------------
 
 ## Images 
 
-![Image of BattleShip Gameplay](https://i.imgur.com/RFY3Mjr.png)
-
-![Image of BattleShip Gameplay](https://i.imgur.com/561qjCn.png)
-
+| Functionality  | Image  |
+| ------------ | ------------ |
+|  Landing Page |[![CSS Icon](https://i.imgur.com/xxxjbkz.png)](https://developer.mozilla.org/en-US/docs/Web/CSS) |
 ------------
 
 ## Getting Started
-1. Setup the five ships that are prompted on load, Ships are allowed to be played horizontally or vertically<br>
-2. Player must then target grid coordinates on the computer's board to take out all enemy ships
-
-| Ships  | Length  |
-| ------------ | ------------ |
-|  Carrier | 5 units |
-|  BattleShip| 4 units  |
-|  Destroyer | 3 units |
-| Submarine  | 3 units  |
-|  Patrol Boat | 2 units |
+1. User is able to log and in view events that they have created 
+2. When clicking on the new event button a form is rendered with two fields, one for the title of the event and the other is for uploading a template with a column of names and a column of phone numbers 
+3. After the form is submitted all the guests on the list will recieve a text message with a unique url that directs them to a qr code generated for them to check in at an event 
+4. Full CRUD is avaible for a User to work with both the event model and the event list model 
 
 ------------
 
@@ -42,12 +35,12 @@ I made this game for the first unit project at General Assembly, the game consis
 - Mario Recinos (Instructional Associate at General Assembly)
 - Devlin Booth (Instructional Associate at General Assembly)
 - Stephanie Lee (Instructional Associate at General Assembly)
-- Kenneth Chang 
-- mdn Web Docs
+- Everyone in pod 2 at General Assembly
 
 ------------
 
 ## Future Features
-- Revisitng the UI and making it more modern 
-- Adding additional functionality that will display a message telling the player what ship they sank 
-- Allowing the player to input name to be displayed on the messageboard
+- CSS styling updates 
+- More CSS animations for a better look on the landing page 
+- Limit the amount of people on one list depending on subscription service 
+- Implement stripe, because twilio cost an arm and a leg 
