@@ -25,7 +25,10 @@ This is an event creation and tracker application, which provides the user a sim
 
 | Functionality  | Image  |
 | ------------ | ------------ |
-|  Landing Page |[![CSS Icon](https://i.imgur.com/xxxjbkz.png)](https://developer.mozilla.org/en-US/docs/Web/CSS) |
+|  Landing Page |[![Landing Page](https://i.imgur.com/tLImE1G.png)]()|
+|  Home Page |[![Home Page](https://i.imgur.com/tLImE1G.png)]()|
+|  Details Page |[![Details Page](https://i.imgur.com/TgacAu5.png)]()|
+|  Scanning Page |[![Scanning Page](https://i.imgur.com/pFHmUga.png)]()|
 ------------
 
 ## Getting Started
