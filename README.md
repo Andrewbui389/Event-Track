@@ -8,12 +8,12 @@ This is an event creation and tracker application, which provides the user a sim
 
 ## Built With
 [![JavaScript Icon](https://i.imgur.com/8dlunYx.png)](https://www.javascript.com/)
-[![HTML Icon](https://i.imgur.com/a28wdJt.png)]
-[![HTML Icon](https://i.imgur.com/a28wdJt.png)]
-[![HTML Icon](https://i.imgur.com/a28wdJt.png)]
-[![HTML Icon](https://i.imgur.com/a28wdJt.png)]
-[![HTML Icon](https://i.imgur.com/a28wdJt.png)]
-[![HTML Icon](https://i.imgur.com/a28wdJt.png)]
+[![HTML Icon](https://i.imgur.com/a28wdJt.png)]()
+[![HTML Icon](https://i.imgur.com/a28wdJt.png)]()
+[![HTML Icon](https://i.imgur.com/a28wdJt.png)]()
+[![HTML Icon](https://i.imgur.com/a28wdJt.png)]()
+[![HTML Icon](https://i.imgur.com/a28wdJt.png)]()
+[![HTML Icon](https://i.imgur.com/a28wdJt.png)]()
 
 
 ------------
