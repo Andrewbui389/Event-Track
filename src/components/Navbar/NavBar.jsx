@@ -14,7 +14,7 @@ export default function NavBar({ user, setUser }) {
       {user ? 
       <>
       <div className='nav-item'>
-        <Link to='/'>Event Track</Link>
+        <h3><Link to='/'>Event Track</Link></h3>
       </div>
       <div className='nav-item'>
         <h6> Welcome, {user.name} </h6>
