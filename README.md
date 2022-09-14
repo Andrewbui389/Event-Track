@@ -1,6 +1,6 @@
 # Event-Track
 
-Link to Game: https://event-track.herokuapp.com/
+Link to Application: https://event-track.herokuapp.com/
 
 This is an event creation and tracker application, which provides the user a simplified planning experience. Before, planning an event is annoying because you have to text all of the guests, and for everyones saftey you don't want randoms coming into the event so you have to keep an eye on everybody. Event-track enables a user to mass text all of their guests and provides checkin fuctionality right when they arrive at the door. 
 
