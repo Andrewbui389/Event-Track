@@ -13,12 +13,12 @@ module.exports = {
     updateTitle
 }
 
-function sendText(name,event,eventId,guestId){
+function sendText(name,event,eventId,guestId,phoneNumber){
     client.messages 
         .create({ 
          body: `Hi ${name}, this is you invitation to ${event} event click on the link when you arrive at the door https://event-track.herokuapp.com/guestpass/${eventId}/${guestId}`,  
          messagingServiceSid: messagingServiceSid,      
-         to: '503-888-4816' 
+         to: `${phoneNumber}`
         }) 
         .then(message => console.log(message.sid)) 
         .done();
@@ -46,7 +46,7 @@ async function create(req,res){
             newEvent.guestList.push(guest)
         })
         newEvent.guestList.forEach(guest => {
-            sendText(guest.name, eventTitle, newEvent._id, guest._id)
+            sendText(guest.name, eventTitle, newEvent._id, guest._id, req.phoneNumber)
         })
         userEventList.events.push(newEvent._id)
         newEvent.save()
