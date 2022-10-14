@@ -1,20 +1,22 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 a {
   text-decoration: none;
   color: antiquewhite;
 }
-
 /* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
@@ -33,7 +35,9 @@ a {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--tan-4);
@@ -41,7 +45,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 nav {
@@ -58,25 +63,25 @@ nav > a {
   color: white;
 }
 
-li > button {
+li > button{
   background-color: rgba(0, 0, 0, 0);
   padding: 0 5px;
 }
 
-li > button:hover {
+li > button:hover{
   background-color: rgba(173, 45, 45, 0.537);
   transition: 500ms;
 }
 
-nav > .nav-item > * {
+nav  > .nav-item > * {
   margin: 0;
 }
 
-nav > .nav-item > h6 {
+nav  > .nav-item > h6 {
   margin-right: 10px;
 }
 
-.displayItems, nav > .nav-item {
+.displayItems, nav  > .nav-item {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -88,7 +93,7 @@ nav > .nav-item > h6 {
   padding: 0;
 }
 
-.rightSide {
+.rightSide{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -97,12 +102,12 @@ nav > .nav-item > h6 {
   width: 80vw;
 }
 
-.leftsidenav {
+.leftsidenav{
   display: flex;
   flex-direction: column;
 }
 
-#navColor {
+#navColor{
   background-color: var(--tan-4);
 }
 
@@ -146,9 +151,9 @@ nav > .nav-item > h6 {
   align-items: center;
   background-color: var(--tan-1);
   color: var(--text-dark);
-  border: 0.1vmin solid var(--tan-3);
+  border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
-  padding: 0.6vmin;
+  padding: .6vmin;
   text-align: center;
   font-size: 2vmin;
 }
@@ -157,48 +162,47 @@ nav > .nav-item > h6 {
   width: 40vmin;
   padding: 3vmin;
   background-color: var(--tan-1);
-  border: 0.1vmin solid var(--tan-3);
+  border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
 }
 
-.form-con {
+.form-con{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.formItems {
+.formItems{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-
-.form-label {
+.form-label{
   height: 10vh;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-around;
-  margin-right: 15px;
+  margin-right: 15px
 }
 
-.form-group {
+.form-group{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
 }
 
-.eventTableCell {
+.eventTableCell{
   height: 8vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.leftSideNav {
+.leftSideNav{
   display: flex;
   justify-content: center;
   width: 15vw;
@@ -210,8 +214,6 @@ nav > .nav-item > h6 {
 
 ul > button {
   width: 10vw;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   border-style: none;
   border-radius: 15px;
@@ -221,6 +223,7 @@ ul > button:hover {
   background-color: #122848;
   transition: 0.5s;
 }
+
 
 p.error-message {
   color: var(--orange);
@@ -243,8 +246,8 @@ label {
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 0.5vmin;
+  border: .1vmin solid var(--tan-3);
+  border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
   outline: none;
@@ -263,28 +266,28 @@ button, a.button {
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: 0.1vmin solid var(--tan-2);
-  border-radius: 0.5vmin;
+  border: .1vmin solid var(--tan-2);
+  border-radius: .5vmin;
   outline: none;
   cursor: pointer;
 }
 
 button.btn-sm {
   font-size: 1.5vmin;
-  padding: 0.6vmin 0.8vmin;
+  padding: .6vmin .8vmin;
 }
 
 button.btn-xs {
   font-size: 1vmin;
-  padding: 0.4vmin 0.5vmin;
+  padding: .4vmin .5vmin;
 }
 
-button:disabled, form:invalid button[type=submit] {
+button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
   background-color: var(--tan-4);
 }
 
-button[type=submit] {
+button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
@@ -293,4 +296,4 @@ button[type=submit] {
   .auth-page {
     flex-direction: column;
   }
-}/*# sourceMappingURL=index.css.map */
+}
